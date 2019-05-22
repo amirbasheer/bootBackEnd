@@ -1,35 +1,35 @@
-const PlayerLevelStats = require('../../models').PlayerLevelStats;
+const OpponentLevelStats = require('../../models').OpponentLevelStats;
+const Opponent = require('../../models').Opponent;
 const Player = require('../../models').Player;
-const Level = require('../../models').Level;
 
 
 module.exports = {
     list(req, res) {
-        return PlayerLevelStats
+        return OpponentLevelStats
             .findAll({
-                include:[
+                include: [
                     {
-                        model:Player,
-                        as:'player',
-                        where:{ status:1 },
-                        required:false
+                        model: Player,
+                        as: 'player',
+                        where: {status: 1},
+                        required: false
                     },
                     {
-                        model:Level,
-                        as:'level',
-                        where:{ status:1 },
-                        required:false
+                        model: Opponent,
+                        as: 'opponent',
+                        where: {status: 1},
+                        required: false
                     },
                 ],
                 order: [
                     ['id', 'ASC']
                 ],
-                where: { status: 1 }
+                where: {status: 1}
             })
-            .then((playerLevelStats) => res.status(200).send({
+            .then((opponentLevelStats) => res.status(200).send({
                 status: true,
                 message: 'Data Fetched',
-                data: playerLevelStats
+                data: opponentLevelStats
             }))
             .catch((error) => {
                 res.status(400).send({
@@ -42,40 +42,38 @@ module.exports = {
     },
 
     getById(req, res) {
-        return PlayerLevelStats
+        return OpponentLevelStats
             .findOne({
                 where: {
                     id: req.params.id,
-                    status:1
+                    status: 1
                 },
-                include:[
+                include: [
                     {
-                        model:Player,
-                        as:'player',
-                        where:{ status:1 },
-                        required:false
+                        model: Player,
+                        as: 'player',
+                        where: {status: 1},
+                        required: false
                     },
                     {
-                        model:Level,
-                        as:'level',
-                        where:{ status:1 },
-                        required:false
+                        model: Opponent,
+                        as: 'opponent',
+                        where: {status: 1},
+                        required: false
                     },
-
-
                 ],
             })
-            .then((playerLevelStats) => {
-                if (!playerLevelStats) {
+            .then((opponentLevelStats) => {
+                if (!opponentLevelStats) {
                     return res.status(404).send({
                         status: false,
-                        message: 'PlayerLevelStats Not Found'
+                        message: 'OpponentLevelStats Not Found'
                     });
                 }
                 return res.status(200).send({
                     status: true,
                     message: "Data Fetched",
-                    data: playerLevelStats,
+                    data: opponentLevelStats,
                 });
             })
             .catch((error) => res.status(400).send({
@@ -85,10 +83,10 @@ module.exports = {
             }));
     },
     add(req, res) {
-        return PlayerLevelStats
+        return OpponentLevelStats
             .create({
+                opp_id: req.body.opp_id,
                 p_id: req.body.p_id,
-                lv_id: req.body.lv_id,
                 dr: req.body.dr,
                 match_up: req.body.match_up,
                 projected: req.body.projected,
@@ -99,10 +97,10 @@ module.exports = {
                 plus_minus_sr: req.body.plus_minus_sr,
                 status: 1
             })
-            .then((playerLevelStats) => res.status(200).send({
+            .then((opponentLevelStats) => res.status(200).send({
                 status: true,
-                message: "PlayerLevelStats Added Successfully",
-                data : playerLevelStats
+                message: "OpponentLevelStats Added Successfully",
+                data: opponentLevelStats
             }))
             .catch((error) => res.status(400).send({
                 status: false,
@@ -111,10 +109,10 @@ module.exports = {
             }));
     },
     update(req, res) {
-        return PlayerLevelStats
+        return OpponentLevelStats
             .update({
+                opp_id: req.body.opp_id,
                 p_id: req.body.p_id,
-                lv_id: req.body.lv_id,
                 dr: req.body.dr,
                 match_up: req.body.match_up,
                 projected: req.body.projected,
@@ -125,13 +123,13 @@ module.exports = {
                 plus_minus_sr: req.body.plus_minus_sr,
             }, {
                 where: {
-                    id: req.params.id,status: 1
+                    id: req.params.id, status: 1
                 }
             })
-            .then((playerLevelStats) => res.status(200).send({
+            .then((opponentLevelStats) => res.status(200).send({
                 status: true,
-                data : playerLevelStats,
-                message: 'PlayerLevelStats Updated Successfully'
+                data: opponentLevelStats,
+                message: 'OpponentLevelStats Updated Successfully'
             }))
             .catch((error) => res.status(400).send({
                 status: false,
@@ -140,7 +138,7 @@ module.exports = {
             }));
     },
     delete(req, res) {
-        return PlayerLevelStats
+        return OpponentLevelStats
             .update({
                 status: 0
             }, {
@@ -148,10 +146,10 @@ module.exports = {
                     id: req.params.id
                 }
             })
-            .then((playerLevelStats) => res.status(200).send({
+            .then((opponentLevelStats) => res.status(200).send({
                 status: true,
-                data : playerLevelStats,
-                message: 'PlayerLevelStats Deleted Successfully'
+                data: opponentLevelStats,
+                message: 'OpponentLevelStats Deleted Successfully'
             }))
             .catch((error) => res.status(400).send({
                 status: false,

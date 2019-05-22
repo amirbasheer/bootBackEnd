@@ -2,22 +2,22 @@
 
 module.exports = (sequelize, DataTypes) => {
     var League = sequelize.define('League', {
-        id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true, allowNull: true },
+        id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true, allowNull: true},
         name: DataTypes.STRING,
         ranking: DataTypes.INTEGER,
         fame: DataTypes.INTEGER,
         status: DataTypes.INTEGER,
     }, {});
 
-    League.associate = function(models) {
+    League.associate = function (models) {
         League.hasMany(models.Player, {
-                foreignKey: 'league_id' ,
-                as: 'players'
-            });
+            foreignKey: 'league_id',
+            as: 'players'
+        });
         League.hasMany(models.Level, {
-                foreignKey: 'id' ,
-                as: 'levels'
-            });
+            foreignKey: 'id',
+            as: 'levels'
+        });
     };
     return League;
 };

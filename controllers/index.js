@@ -6,6 +6,7 @@ const opponentPlayer = require('./opponentPlayer/opponentPlayer');
 const level = require('./level/level');
 const opponentStats = require('./opponentStats/opponentStats');
 const playerLevelStats = require('./playerLevelStats/playerLevelStats');
+const opponentLevelStats = require('./opponentLevelStats/opponentLevelStats');
 
 module.exports = {
     league,
@@ -16,4 +17,5 @@ module.exports = {
     level,
     opponentStats,
     playerLevelStats,
+    opponentLevelStats,
 }

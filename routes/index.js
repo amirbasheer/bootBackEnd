@@ -9,6 +9,7 @@ const opponentPlayerController = require('../controllers').opponentPlayer;
 const levelController = require('../controllers').level;
 const opponentStatsController = require('../controllers').opponentStats;
 const playerLevelStatsController = require('../controllers').playerLevelStats;
+const opponentLevelStatsController = require('../controllers').opponentLevelStats;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -78,6 +79,14 @@ router.get('/api/playerLevelStats', playerLevelStatsController.list);
 router.get('/api/playerLevelStats/:id', playerLevelStatsController.getById);
 router.put('/api/playerLevelStats/:id', playerLevelStatsController.update);
 router.put('/api/playerLevelStatsDelete/:id', playerLevelStatsController.delete);
+
+/* OpponentLevelStats Router. */
+
+router.post('/api/opponentLevelStats', opponentLevelStatsController.add);
+router.get('/api/opponentLevelStats', opponentLevelStatsController.list);
+router.get('/api/opponentLevelStats/:id', opponentLevelStatsController.getById);
+router.put('/api/opponentLevelStats/:id', opponentLevelStatsController.update);
+router.put('/api/opponentLevelStatsDelete/:id', opponentLevelStatsController.delete);
 
 //1
 //
@@ -152,6 +161,16 @@ router.put('/api/playerLevelStatsDelete/:id', playerLevelStatsController.delete)
 // 8
 //
 // PlayerLevelStats
+//
+// add=> http://192.168.100.3:3000/api/playerLevelStats/ (POST)
+// get=> http://192.168.100.3:3000/api/playerLevelStats/ (GET)
+// getById=> http://192.168.100.3:3000/api/playerLevelStats/:id (GET)
+// update=> http://192.168.100.3:3000/api/playerLevelStats/:id (PUT)
+// delete=> http://192.168.100.3:3000/api/playerLevelStatsDelete/:id (PUT)
+//
+// 9
+//
+// OpponentLevelStats
 //
 // add=> http://192.168.100.3:3000/api/playerLevelStats/ (POST)
 // get=> http://192.168.100.3:3000/api/playerLevelStats/ (GET)
