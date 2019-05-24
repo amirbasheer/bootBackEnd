@@ -7,12 +7,15 @@ module.exports = (sequelize, DataTypes) => {
         p_id: DataTypes.INTEGER,
         dr: DataTypes.INTEGER,
         match_up: DataTypes.INTEGER,
-        projected: DataTypes.INTEGER,
+        projected_sr: DataTypes.INTEGER,
         scored: DataTypes.INTEGER,
         tp: DataTypes.INTEGER,
-        pr: DataTypes.INTEGER,
+        opp_ovr: DataTypes.INTEGER,
         plus_minus_pr: DataTypes.INTEGER,
         plus_minus_sr: DataTypes.INTEGER,
+        projected_pr: DataTypes.INTEGER,
+        sr: DataTypes.STRING,
+        player_ovr: DataTypes.INTEGER,
         status: DataTypes.INTEGER,
     }, {});
 

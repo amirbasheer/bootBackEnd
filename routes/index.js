@@ -92,91 +92,91 @@ router.put('/api/opponentLevelStatsDelete/:id', opponentLevelStatsController.del
 //
 // League
 //
-// add=> http://192.168.100.3:3000/api/league/ (POST)
-// get=> http://192.168.100.3:3000/api/league/ (GET)
-// getById=> http://192.168.100.3:3000/api/league/:id (GET)
-// update=> http://192.168.100.3:3000/api/league/:id (PUT)
-// delete=> http://192.168.100.3:3000/api/leagueDelete/:id (PUT)
+// add=> http://192.168.100.3:3002/api/league/ (POST)
+// get=> http://192.168.100.3:3002/api/league/ (GET)
+// getById=> http://192.168.100.3:3002/api/league/:id (GET)
+// update=> http://192.168.100.3:3002/api/league/:id (PUT)
+// delete=> http://192.168.100.3:3002/api/leagueDelete/:id (PUT)
 //
 //2
 //
 // Player
 //
-// add=> http://192.168.100.3:3000/api/player/ (POST)
-// get=> http://192.168.100.3:3000/api/player/ (GET)
-// getById=> http://192.168.100.3:3000/api/player/:id (GET)
-// update=> http://192.168.100.3:3000/api/player/:id (PUT)
-// delete=> http://192.168.100.3:3000/api/playerDelete/:id (PUT)
+// add=> http://192.168.100.3:3002/api/player/ (POST)
+// get=> http://192.168.100.3:3002/api/player/ (GET)
+// getById=> http://192.168.100.3:3002/api/player/:id (GET)
+// update=> http://192.168.100.3:3002/api/player/:id (PUT)
+// delete=> http://192.168.100.3:3002/api/playerDelete/:id (PUT)
 //
 //3
 //
 // LevelStats
 //
-// add=> http://192.168.100.3:3000/api/levelStats/ (POST)
-// get=> http://192.168.100.3:3000/api/levelStats/ (GET)
-// getById=> http://192.168.100.3:3000/api/levelStats/:id (GET)
-// update=> http://192.168.100.3:3000/api/levelStats/:id (PUT)
-// delete=> http://192.168.100.3:3000/api/levelStatsDelete/:id (PUT)
+// add=> http://192.168.100.3:3002/api/levelStats/ (POST)
+// get=> http://192.168.100.3:3002/api/levelStats/ (GET)
+// getById=> http://192.168.100.3:3002/api/levelStats/:id (GET)
+// update=> http://192.168.100.3:3002/api/levelStats/:id (PUT)
+// delete=> http://192.168.100.3:3002/api/levelStatsDelete/:id (PUT)
 //
 // 4
 //
 // Opponent
 //
-// add=> http://192.168.100.3:3000/api/opponent/ (POST)
-// get=> http://192.168.100.3:3000/api/opponent/ (GET)
-// getById=> http://192.168.100.3:3000/api/opponent/:id (GET)
-// update=> http://192.168.100.3:3000/api/opponent/:id (PUT)
-// delete=> http://192.168.100.3:3000/api/opponentDelete/:id (PUT)
+// add=> http://192.168.100.3:3002/api/opponent/ (POST)
+// get=> http://192.168.100.3:3002/api/opponent/ (GET)
+// getById=> http://192.168.100.3:3002/api/opponent/:id (GET)
+// update=> http://192.168.100.3:3002/api/opponent/:id (PUT)
+// delete=> http://192.168.100.3:3002/api/opponentDelete/:id (PUT)
 //
 // 5
 //
 // OpponentPlayer
 //
-// add=> http://192.168.100.3:3000/api/opponentPlayer/ (POST)
-// get=> http://192.168.100.3:3000/api/opponentPlayer/ (GET)
-// getById=> http://192.168.100.3:3000/api/opponentPlayer/:id (GET)
-// update=> http://192.168.100.3:3000/api/opponentPlayer/:id (PUT)
-// delete=> http://192.168.100.3:3000/api/opponentPlayerDelete/:id (PUT)
+// add=> http://192.168.100.3:3002/api/opponentPlayer/ (POST)
+// get=> http://192.168.100.3:3002/api/opponentPlayer/ (GET)
+// getById=> http://192.168.100.3:3002/api/opponentPlayer/:id (GET)
+// update=> http://192.168.100.3:3002/api/opponentPlayer/:id (PUT)
+// delete=> http://192.168.100.3:3002/api/opponentPlayerDelete/:id (PUT)
 //
 // 6
 //
 // Level
 //
-// add=> http://192.168.100.3:3000/api/level/ (POST)
-// get=> http://192.168.100.3:3000/api/level/ (GET)
-// getById=> http://192.168.100.3:3000/api/level/:id (GET)
-// update=> http://192.168.100.3:3000/api/level/:id (PUT)
-// delete=> http://192.168.100.3:3000/api/levelDelete/:id (PUT)
+// add=> http://192.168.100.3:3002/api/level/ (POST)
+// get=> http://192.168.100.3:3002/api/level/ (GET)
+// getById=> http://192.168.100.3:3002/api/level/:id (GET)
+// update=> http://192.168.100.3:3002/api/level/:id (PUT)
+// delete=> http://192.168.100.3:3002/api/levelDelete/:id (PUT)
 //
 // 7
 //
 // OpponentStats
 //
-// add=> http://192.168.100.3:3000/api/opponentStats/ (POST)
-// get=> http://192.168.100.3:3000/api/opponentStats/ (GET)
-// getById=> http://192.168.100.3:3000/api/opponentStats/:id (GET)
-// update=> http://192.168.100.3:3000/api/opponentStats/:id (PUT)
-// delete=> http://192.168.100.3:3000/api/opponentStatsDelete/:id (PUT)
+// add=> http://192.168.100.3:3002/api/opponentStats/ (POST)
+// get=> http://192.168.100.3:3002/api/opponentStats/ (GET)
+// getById=> http://192.168.100.3:3002/api/opponentStats/:id (GET)
+// update=> http://192.168.100.3:3002/api/opponentStats/:id (PUT)
+// delete=> http://192.168.100.3:3002/api/opponentStatsDelete/:id (PUT)
 //
 // 8
 //
 // PlayerLevelStats
 //
-// add=> http://192.168.100.3:3000/api/playerLevelStats/ (POST)
-// get=> http://192.168.100.3:3000/api/playerLevelStats/ (GET)
-// getById=> http://192.168.100.3:3000/api/playerLevelStats/:id (GET)
-// update=> http://192.168.100.3:3000/api/playerLevelStats/:id (PUT)
-// delete=> http://192.168.100.3:3000/api/playerLevelStatsDelete/:id (PUT)
+// add=> http://192.168.100.3:3002/api/playerLevelStats/ (POST)
+// get=> http://192.168.100.3:3002/api/playerLevelStats/ (GET)
+// getById=> http://192.168.100.3:3002/api/playerLevelStats/:id (GET)
+// update=> http://192.168.100.3:3002/api/playerLevelStats/:id (PUT)
+// delete=> http://192.168.100.3:3002/api/playerLevelStatsDelete/:id (PUT)
 //
 // 9
 //
 // OpponentLevelStats
 //
-// add=> http://192.168.100.3:3000/api/playerLevelStats/ (POST)
-// get=> http://192.168.100.3:3000/api/playerLevelStats/ (GET)
-// getById=> http://192.168.100.3:3000/api/playerLevelStats/:id (GET)
-// update=> http://192.168.100.3:3000/api/playerLevelStats/:id (PUT)
-// delete=> http://192.168.100.3:3000/api/playerLevelStatsDelete/:id (PUT)
+// add=> http://192.168.100.3:3002/api/opponentLevelStats/ (POST)
+// get=> http://192.168.100.3:3002/api/opponentLevelStats/ (GET)
+// getById=> http://192.168.100.3:3002/api/opponentLevelStats/:id (GET)
+// update=> http://192.168.100.3:3002/api/opponentLevelStats/:id (PUT)
+// delete=> http://192.168.100.3:3002/api/opponentLevelStatsDelete/:id (PUT)
 //
 
 module.exports = router;

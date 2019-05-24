@@ -89,12 +89,15 @@ module.exports = {
                 p_id: req.body.p_id,
                 dr: req.body.dr,
                 match_up: req.body.match_up,
-                projected: req.body.projected,
+                projected_sr: req.body.projected_sr,
                 scored: req.body.scored,
                 tp: req.body.tp,
-                pr: req.body.pr,
+                opp_ovr: req.body.opp_ovr,
+                projected_pr: req.body.projected_pr,
                 plus_minus_pr: req.body.plus_minus_pr,
                 plus_minus_sr: req.body.plus_minus_sr,
+                player_ovr: req.body.player_ovr,
+                sr: req.body.sr,
                 status: 1
             })
             .then((opponentLevelStats) => res.status(200).send({
@@ -115,12 +118,15 @@ module.exports = {
                 p_id: req.body.p_id,
                 dr: req.body.dr,
                 match_up: req.body.match_up,
-                projected: req.body.projected,
+                projected_sr: req.body.projected_sr,
                 scored: req.body.scored,
                 tp: req.body.tp,
-                pr: req.body.pr,
+                opp_ovr: req.body.opp_ovr,
+                projected_pr: req.body.projected_pr,
                 plus_minus_pr: req.body.plus_minus_pr,
                 plus_minus_sr: req.body.plus_minus_sr,
+                player_ovr: req.body.player_ovr,
+                sr: req.body.sr,
             }, {
                 where: {
                     id: req.params.id, status: 1
