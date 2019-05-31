@@ -81,6 +81,8 @@ module.exports = {
                 league_role: req.body.league_role,
                 sr: req.body.sr,
                 ovr: req.body.ovr,
+                pr: req.body.pr,
+                availability_status: req.body.availability_status,
                 league_id: req.body.league_id,
                 status: 1
             })
@@ -105,6 +107,8 @@ module.exports = {
                 league_role: req.body.league_role,
                 sr: req.body.sr,
                 ovr: req.body.ovr,
+                pr: req.body.pr,
+                availability_status: req.body.availability_status,
                 league_id: req.body.league_id,
             }, {
                 where: {

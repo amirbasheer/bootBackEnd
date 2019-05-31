@@ -11,6 +11,8 @@ module.exports = (sequelize, DataTypes) => {
         sr: DataTypes.STRING,
         ovr: DataTypes.INTEGER,
         league_id: DataTypes.INTEGER,
+        pr: DataTypes.INTEGER,
+        availability_status: DataTypes.INTEGER,
         status: DataTypes.INTEGER,
     }, {});
 

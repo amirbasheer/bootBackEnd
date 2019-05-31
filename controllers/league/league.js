@@ -6,11 +6,11 @@ module.exports = {
     list(req, res) {
         return League
             .findAll({
-                include:[
+                include: [
                     {
-                        model:Player,
-                        as:'players',
-                        where:{ status:1 },
+                        model: Player,
+                        as: 'players',
+                        where: {status: 1},
                         required: false
                     }
 
@@ -18,7 +18,7 @@ module.exports = {
                 order: [
                     ['id', 'ASC']
                 ],
-                where: { status: 1 }
+                where: {status: 1}
             })
             .then((league) => res.status(200).send({
                 status: true,
@@ -40,13 +40,13 @@ module.exports = {
             .findOne({
                 where: {
                     id: req.params.id,
-                    status:1
+                    status: 1
                 },
-                include:[
+                include: [
                     {
-                        model:Player,
-                        as:'players',
-                        where:{ status:1 },
+                        model: Player,
+                        as: 'players',
+                        where: {status: 1},
                         required: false
                     }
 
@@ -72,6 +72,7 @@ module.exports = {
             }));
     },
     add(req, res) {
+        const a = req.body.extra;
         return League
             .create({
                 name: req.body.name,
@@ -79,16 +80,50 @@ module.exports = {
                 fame: req.body.fame,
                 status: 1
             })
-            .then((league) => res.status(200).send({
-                status: true,
-                message: "League Added Successfully",
-                data : league
-            }))
+            .then((league) => {
+                if (a.length > 0) {
+                    a.map(i =>
+                    Player.create({
+                        name: i.name,
+                        ign: i.ign,
+                        discord: i.discord,
+                        level_played: i.level_played,
+                        league_role: i.league_role,
+                        sr: i.sr,
+                        ovr: i.ovr,
+                        pr: i.pr,
+                        availability_status: i.availability_status,
+                        league_id: league['id'],
+                        status: 1
+                    }).then((player) => res.status(200).send({
+                        status: true,
+                        message: "League Added Successfully",
+                        data: player
+                    }))
+                        .catch((error) => res.status(400).send({
+                            status: false,
+                            message: 'Error',
+                            error: error
+                        }))
+                )}
+                else {
+                    res.status(200).send({
+                        status: true,
+                        message: "League Added Successfully",
+                        data: league
+                    })
+                        .catch((error) => res.status(400).send({
+                            status: false,
+                            message: 'Error',
+                            error: error
+                        }))
+                }
+            })
             .catch((error) => res.status(400).send({
                 status: false,
                 message: 'Error',
                 error: error
-            }));
+            }))
     },
     update(req, res) {
         return League
@@ -98,12 +133,12 @@ module.exports = {
                 fame: req.body.fame,
             }, {
                 where: {
-                    id: req.params.id,status: 1
+                    id: req.params.id, status: 1
                 }
             })
             .then((league) => res.status(200).send({
                 status: true,
-                data : league,
+                data: league,
                 message: 'League Updated Successfully'
             }))
             .catch((error) => res.status(400).send({
@@ -111,7 +146,8 @@ module.exports = {
                 message: 'Error',
                 error: error
             }));
-    },
+    }
+    ,
     delete(req, res) {
         return League
             .update({
@@ -123,7 +159,7 @@ module.exports = {
             })
             .then((league) => res.status(200).send({
                 status: true,
-                data : league,
+                data: league,
                 message: 'League Deleted Successfully'
             }))
             .catch((error) => res.status(400).send({
@@ -133,3 +169,6 @@ module.exports = {
             }));
     }
 };
+
+
+
