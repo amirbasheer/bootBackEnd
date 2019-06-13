@@ -98,6 +98,8 @@ module.exports = {
                 plus_minus_sr: req.body.plus_minus_sr,
                 player_ovr: req.body.player_ovr,
                 sr: req.body.sr,
+                opp_dr: req.body.opp_dr,
+                opp_name: req.body.opp_name,
                 status: 1
             })
             .then((opponentLevelStats) => res.status(200).send({
@@ -126,6 +128,8 @@ module.exports = {
                 plus_minus_pr: req.body.plus_minus_pr,
                 plus_minus_sr: req.body.plus_minus_sr,
                 player_ovr: req.body.player_ovr,
+                opp_dr: req.body.opp_dr,
+                opp_name: req.body.opp_name,
                 sr: req.body.sr,
             }, {
                 where: {

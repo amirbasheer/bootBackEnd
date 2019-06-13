@@ -3,7 +3,6 @@
 module.exports = (sequelize, DataTypes) => {
     var OpponentLevelStats = sequelize.define('OpponentLevelStats', {
         id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true, allowNull: true },
-        opp_id: DataTypes.INTEGER,
         p_id: DataTypes.INTEGER,
         dr: DataTypes.INTEGER,
         match_up: DataTypes.INTEGER,
@@ -16,6 +15,8 @@ module.exports = (sequelize, DataTypes) => {
         projected_pr: DataTypes.INTEGER,
         sr: DataTypes.STRING,
         player_ovr: DataTypes.INTEGER,
+        opp_dr: DataTypes.INTEGER,
+        opp_name: DataTypes.STRING,
         status: DataTypes.INTEGER,
     }, {});
 
