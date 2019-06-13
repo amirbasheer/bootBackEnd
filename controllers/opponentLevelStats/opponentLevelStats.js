@@ -1,5 +1,4 @@
 const OpponentLevelStats = require('../../models').OpponentLevelStats;
-// const Opponent = require('../../models').Opponent;
 const Player = require('../../models').Player;
 
 
@@ -87,6 +86,7 @@ module.exports = {
                 sr: req.body.sr,
                 opp_dr: req.body.opp_dr,
                 opp_name: req.body.opp_name,
+                opp_fame: req.body.opp_fame,
                 status: 1
             })
             .then((opponentLevelStats) => res.status(200).send({
@@ -116,6 +116,7 @@ module.exports = {
                 player_ovr: req.body.player_ovr,
                 opp_dr: req.body.opp_dr,
                 opp_name: req.body.opp_name,
+                opp_fame: req.body.opp_fame,
                 sr: req.body.sr,
             }, {
                 where: {

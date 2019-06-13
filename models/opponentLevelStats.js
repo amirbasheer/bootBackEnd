@@ -17,6 +17,7 @@ module.exports = (sequelize, DataTypes) => {
         player_ovr: DataTypes.INTEGER,
         opp_dr: DataTypes.INTEGER,
         opp_name: DataTypes.STRING,
+        opp_fame: DataTypes.INTEGER,
         status: DataTypes.INTEGER,
     }, {});
 
