@@ -20,10 +20,10 @@ module.exports = (sequelize, DataTypes) => {
             foreignKey: 'id',
             as: 'level'
         });
-        Opponent.hasMany(models.OpponentLevelStats, {
-            foreignKey: 'id' ,
-            as: 'opponentLevelStats'
-        });
+        // Opponent.hasMany(models.OpponentLevelStats, {
+        //     foreignKey: 'id' ,
+        //     as: 'opponentLevelStats'
+        // });
     };
     return Opponent;
 };

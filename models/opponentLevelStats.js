@@ -25,10 +25,10 @@ module.exports = (sequelize, DataTypes) => {
             foreignKey: 'opp_id',
             as: 'opponent'
         });
-        OpponentLevelStats.belongsTo(models.Player, {
-            foreignKey: 'p_id',
-            as: 'player'
-        });
+        // OpponentLevelStats.belongsTo(models.Player, {
+        //     foreignKey: 'p_id',
+        //     as: 'player'
+        // });
     };
     return OpponentLevelStats;
 };

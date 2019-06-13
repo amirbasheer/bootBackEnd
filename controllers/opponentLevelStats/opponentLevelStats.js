@@ -1,5 +1,5 @@
 const OpponentLevelStats = require('../../models').OpponentLevelStats;
-const Opponent = require('../../models').Opponent;
+// const Opponent = require('../../models').Opponent;
 const Player = require('../../models').Player;
 
 
@@ -14,12 +14,12 @@ module.exports = {
                         where: {status: 1},
                         required: false
                     },
-                    {
-                        model: Opponent,
-                        as: 'opponent',
-                        where: {status: 1},
-                        required: false
-                    },
+                    // {
+                    //     model: Opponent,
+                    //     as: 'opponent',
+                    //     where: {status: 1},
+                    //     required: false
+                    // },
                 ],
                 order: [
                     ['id', 'ASC']
@@ -55,12 +55,12 @@ module.exports = {
                         where: {status: 1},
                         required: false
                     },
-                    {
-                        model: Opponent,
-                        as: 'opponent',
-                        where: {status: 1},
-                        required: false
-                    },
+                    // {
+                    //     model: Opponent,
+                    //     as: 'opponent',
+                    //     where: {status: 1},
+                    //     required: false
+                    // },
                 ],
             })
             .then((opponentLevelStats) => {
