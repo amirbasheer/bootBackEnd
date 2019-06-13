@@ -14,12 +14,6 @@ module.exports = {
                         where: {status: 1},
                         required: false
                     },
-                    // {
-                    //     model: Opponent,
-                    //     as: 'opponent',
-                    //     where: {status: 1},
-                    //     required: false
-                    // },
                 ],
                 order: [
                     ['id', 'ASC']
@@ -55,12 +49,6 @@ module.exports = {
                         where: {status: 1},
                         required: false
                     },
-                    // {
-                    //     model: Opponent,
-                    //     as: 'opponent',
-                    //     where: {status: 1},
-                    //     required: false
-                    // },
                 ],
             })
             .then((opponentLevelStats) => {
@@ -85,7 +73,6 @@ module.exports = {
     add(req, res) {
         return OpponentLevelStats
             .create({
-                opp_id: req.body.opp_id,
                 p_id: req.body.p_id,
                 dr: req.body.dr,
                 match_up: req.body.match_up,
@@ -116,7 +103,6 @@ module.exports = {
     update(req, res) {
         return OpponentLevelStats
             .update({
-                opp_id: req.body.opp_id,
                 p_id: req.body.p_id,
                 dr: req.body.dr,
                 match_up: req.body.match_up,

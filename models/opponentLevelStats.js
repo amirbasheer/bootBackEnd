@@ -21,14 +21,10 @@ module.exports = (sequelize, DataTypes) => {
     }, {});
 
     OpponentLevelStats.associate = function(models) {
-        OpponentLevelStats.belongsTo(models.Opponent, {
-            foreignKey: 'opp_id',
-            as: 'opponent'
+        OpponentLevelStats.belongsTo(models.Player, {
+            foreignKey: 'p_id',
+            as: 'player'
         });
-        // OpponentLevelStats.belongsTo(models.Player, {
-        //     foreignKey: 'p_id',
-        //     as: 'player'
-        // });
     };
     return OpponentLevelStats;
 };
